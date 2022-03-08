@@ -26,16 +26,16 @@
                 <form action="procesos/insertar.php" method="post">
                     <div class="input-group mt-4">
                         <label class="input-group-text" for=""><i class="fas fa-bookmark"></i></label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre de la materia">
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la materia" required>
                     </div>
                     <div class="input-group mt-3">
                         <label class="input-group-text" for=""><i class="far fa-hourglass"></i></label>
-                        <input type="text" class="form-control" name="creditos" placeholder="Creditos de clases">
+                        <input type="text" class="form-control" name="creditos" id="creditos" placeholder="Creditos de clases" required>
                     </div>
                     <div class="input-group mt-3">
                         <label class="input-group-text" for=""><i class="fas fa-paste"></i></label>
-                        <select class="form-select" name="semestre">
-                            <option value="">Selecciona</option>
+                        <select class="form-select" name="semestre" id="semestre" required>
+                            <option value="">Selecciona semestre</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -49,14 +49,14 @@
                     </div>
                     <div class="input-group mt-3">
                         <label class="input-group-text" for=""><i class="fas fa-paste"></i></label>
-                        <select class="form-select" name="carrera" id="">
-                            <option value="">Selecciona</option>
+                        <select class="form-select" name="carrera" id="carrera" required>
+                            <option value="">Selecciona carrera</option>
                             <option value="sis">Ingenieria en Sistemas Computacionales</option>
                             <option value="ige">Ingenieria en Gestion Empresarial</option>
                             <option value="ind">Ingenieria Industruial</option>
                         </select>
                     </div>
-                    <button class="btn btn-outline-dark container-fluid mt-4"> Agregar </button>
+                    <button class="btn btn-outline-dark container-fluid mt-4" id="btn_agregar"> Agregar </button>
                 </form>
             </div>
             <div class="col-8">
