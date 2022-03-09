@@ -28,7 +28,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h1>Actualizando datos</h1>
-                <form action="../procesos/actualizar.php" method="post">
+                <form action="../model/actualizar.php" method="post">
                     <input type="text" hidden value="<?=$id?>" name="id">
                     <div class="input-group mt-4">
                         <label class="input-group-text" for=""><i class="fas fa-bookmark"></i></label>

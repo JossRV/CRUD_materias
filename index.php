@@ -3,7 +3,11 @@
     require_once "clases/metodos.php";
     $obj=new metodos();
     $sql="SELECT * FROM t_materias";
+    $sqlcc="SELECT carrera FROM c_carrera";
+    $sqlcs="SELECT semestre FROM c_semestre";
     $ver=$obj->mostrarDatos($sql);
+    $vercarr=$obj->mostrarDatos($sqlcc);
+    $versemst=$obj->mostrarDatos($sqlcs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +27,7 @@
         </div>
         <div class="row mt-2">
             <div class="col-4">
-                <form action="procesos/insertar.php" method="post">
+                <form action="model/insertar.php" method="post">
                     <div class="input-group mt-4">
                         <label class="input-group-text" for=""><i class="fas fa-bookmark"></i></label>
                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la materia" required>
@@ -36,24 +40,37 @@
                         <label class="input-group-text" for=""><i class="fas fa-paste"></i></label>
                         <select class="form-select" name="semestre" id="semestre" required>
                             <option value="">Selecciona semestre</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                            <?php 
+                                foreach($versemst as $key):
+                            ?>
+                            <option value="<?=$key['semestre']?>"><?=$key['semestre']?></option>
+                            <?php 
+                                endforeach;
+                            ?>
+                            <!-- <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
-                            <option value="9">9</option>
+                            <option value="9">9</option> -->
                         </select>
                     </div>
                     <div class="input-group mt-3">
                         <label class="input-group-text" for=""><i class="fas fa-paste"></i></label>
                         <select class="form-select" name="carrera" id="carrera" required>
                             <option value="">Selecciona carrera</option>
-                            <option value="sis">Ingenieria en Sistemas Computacionales</option>
+                            <?php 
+                                foreach($vercarr as $key):
+                            ?>
+                            <option value="<?=$key['carrera']?>"><?=$key['carrera']?></option>
+                            <?php 
+                                endforeach;
+                            ?>
+                            <!-- <option value="sis">Ingenieria en Sistemas Computacionales</option>
                             <option value="ige">Ingenieria en Gestion Empresarial</option>
-                            <option value="ind">Ingenieria Industruial</option>
+                            <option value="ind">Ingenieria Industruial</option> -->
                         </select>
                     </div>
                     <button class="btn btn-outline-dark container-fluid mt-4" id="btn_agregar"> Agregar </button>
@@ -79,7 +96,7 @@
                             <td><?= $key['semestre'] ?></td>
                             <td><?= $key['carrera'] ?></td>
                             <td><a href="./view/vista_actualizar.php?id=<?=$key['id']?>"><i class="fas fa-edit"></i></a></td>
-                            <td><a href="./procesos/eliminar.php?id=<?=$key['id']?>"><i class="fas fa-trash"></i></a></td>
+                            <td><a href="./model/eliminar.php?id=<?=$key['id']?>"><i class="fas fa-trash"></i></a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

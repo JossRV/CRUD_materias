@@ -6,19 +6,19 @@
     $nombreM=$_POST['nombre'];
     $creditos=$_POST['creditos'];
     $semestre=$_POST['semestre'];
-    $opc=$_POST['carrera'];
+    $carrera=$_POST['carrera'];
 
-    switch($opc){
-        case "sis":
-            $carrera="Ingenieria en Sistemas Computacionales";
-            break;
-        case "ige":
-            $carrera="Ingenieria en Gestion Empresarial";
-            break;
-        case "ind":
-            $carrera="Ingenieria Industruial";
-            break;
-    }
+    // switch($opc){
+    //     case "sis":
+    //         $carrera="Ingenieria en Sistemas Computacionales";
+    //         break;
+    //     case "ige":
+    //         $carrera="Ingenieria en Gestion Empresarial";
+    //         break;
+    //     case "ind":
+    //         $carrera="Ingenieria Industruial";
+    //         break;
+    // }
 
     $datos=array(
         $nombreM,
