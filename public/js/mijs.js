@@ -44,6 +44,9 @@ $(document).ready(()=>{
     $('#btn_agregar').click(function(){
         validacion();
     });
+    $('#btn_actualizar').click(function(){
+        validacion();
+    });
     
     // limitaciones de caracteres
     $('#nombre').on('input',function(){
