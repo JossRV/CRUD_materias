@@ -45,4 +45,12 @@ $(document).ready(()=>{
         validacion();
     });
     
+    // limitaciones de caracteres
+    $('#nombre').on('input',function(){
+        this.value = this.value.replace(/[^a-zA-Z ñÑ 0-9]/g,'');
+        this.value = this.value.charAt(0).toUpperCase()+this.value.slice(1);
+    });
+    $('#creditos').on('input',function(){
+        this.value = this.value.replace(/[^0-9]/g,'');
+    });
 });
