@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     require_once "../clases/conexion.php";
     require_once "../clases/metodos.php";
 
@@ -29,6 +29,7 @@
 
     $obj=new metodos();
     if($obj->insertarDatos($datos)==1){
+        $_SESSION['insertado']=1;
         header("location: ../index.php");
     }else{
         echo "no se agrego correctamente";

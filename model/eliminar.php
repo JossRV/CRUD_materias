@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     require_once "../clases/conexion.php";
     require_once "../clases/metodos.php";
 
@@ -7,6 +7,7 @@
     $obj=new metodos();
     
     if($obj->eliminarDatos($id)==1){
+        $_SESSION['eliminado']=1;
         header("location: ../index.php");
     }else{
         echo "no se ha eliminado";

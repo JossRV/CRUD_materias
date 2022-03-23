@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "clases/conexion.php";
     require_once "clases/metodos.php";
     $obj=new metodos();
@@ -8,6 +9,7 @@
     $ver=$obj->mostrarDatos($sql);
     $vercarr=$obj->mostrarDatos($sqlcc);
     $versemst=$obj->mostrarDatos($sqlcs);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,3 +108,49 @@
     </div>
 </body>
 </html>
+<?php 
+
+    if(isset($_SESSION['insertado'])==1){
+        echo "
+            <script>
+                // alert('Insertado con exito');
+                swal({
+                    title:'Excelente!',
+                    text:'Insertado con exito',
+                    icon:'success',
+                    button:'Aceptar',
+                });
+                // swal('insertado con exito');
+            </script>
+        ";
+        // session_destroy();
+    }
+    if(isset($_SESSION['eliminado'])==1){
+        echo "
+            <script>
+                // alert('Insertado con exito');
+                swal({
+                    title:'Excelente!',
+                    text:'Eliminado con exito',
+                    icon:'success',
+                    button:'Aceptar',
+                });
+                // swal('insertado con exito');
+            </script>
+        ";
+    }
+    if(isset($_SESSION['actualizado'])==1){
+        echo "
+            <script>
+                swal({
+                    title:'Excelente!',
+                    text:'Actualizado con exito',
+                    icon:'success',
+                    button:'Aceptar',
+                });
+            </script>
+        ";
+    }
+    session_destroy();
+
+?>

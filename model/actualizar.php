@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     require_once "../clases/conexion.php";
     require_once "../clases/metodos.php";
 
@@ -31,6 +31,7 @@
 
     $obj=new metodos();
     if($obj->actualizarDatos($datos)==1){
+        $_SESSION['actualizado']=1;
         header("location: ../index.php");
     }else{
         echo "no se actualizaron los datos";

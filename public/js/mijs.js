@@ -1,6 +1,8 @@
 $(document).ready(()=>{
 
     // alertaPrincipal("Cargado con exito");
+    // alert('Pagina cargada con exito');
+    // swal('cargado con exito');
     
     // let nombre=$('#nombre').val();
     // let creditos=$('#creditos').val();
@@ -36,8 +38,6 @@ $(document).ready(()=>{
             alertaValidacion("No ha seleccionado el semestre");
         }else if($('#carrera').val()==""){
             alertaValidacion("no ha seleccionado la carrera");
-        }else{
-            alertaPrincipal("Cargado con exito");
         }
     }
 
